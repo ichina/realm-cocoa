@@ -350,7 +350,7 @@ RLM_ARRAY_TYPE(CycleObject)
     RLMAssertThrowsWithReasonMatching(linkObject.stringObjectCol = obj,
                                       @"Can't .*StringSubclassObject.*StringObject");
     RLMAssertThrowsWithReasonMatching([linkObject.stringObjectArrayCol addObject:obj],
-                                      @"Cannot .*StringSubclassObject.*StringObject");
+                                      @".*StringSubclassObject.* does not match .*StringObject.*");
     [realm commitWriteTransaction];
 }
 
