@@ -66,6 +66,8 @@ public final class Realm {
     public convenience init() throws {
         let rlmRealm = try RLMRealm(configuration: RLMRealmConfiguration.default())
         self.init(rlmRealm)
+        print("ALLOCATION REALM \(self)")
+
     }
 
     /**
@@ -92,7 +94,10 @@ public final class Realm {
         configuration.fileURL = fileURL
         try self.init(configuration: configuration)
     }
-
+    
+    deinit {
+        print("DEALLOCATION REALM \(self)")
+    }
     // MARK: Async
 
     /**
