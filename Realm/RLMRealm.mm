@@ -142,6 +142,9 @@ NSData *RLMRealmValidatedEncryptionKey(NSData *key) {
 
 - (instancetype)initPrivate {
     self = [super init];
+    
+    NSLog(@"ALLOCATION RLMObject %p", self);
+    
     return self;
 }
 
@@ -668,6 +671,7 @@ REALM_NOINLINE void RLMRealmTranslateException(NSError **error) {
                   "RLMRealm for the duration of the write transaction.");
         }
     }
+    NSLog(@"DEALLOCATION RLMObject %p", self);
 }
 
 - (BOOL)refresh {
