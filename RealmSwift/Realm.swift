@@ -95,7 +95,7 @@ public final class Realm {
     }
     
     deinit {
-        print("DEALLOCATION REALM \(String(format: "%p",rlmRealm)")
+        print("DEALLOCATION REALM \(String(format: "%p",rlmRealm))")
     }
     // MARK: Async
 
