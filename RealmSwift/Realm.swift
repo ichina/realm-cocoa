@@ -66,7 +66,6 @@ public final class Realm {
     public convenience init() throws {
         let rlmRealm = try RLMRealm(configuration: RLMRealmConfiguration.default())
         self.init(rlmRealm)
-        print("ALLOCATION REALM 1\(self)")
 
     }
 
@@ -653,7 +652,7 @@ public final class Realm {
 
     internal init(_ rlmRealm: RLMRealm) {
         self.rlmRealm = rlmRealm
-        print("ALLOCATION REALM 2\(self)")
+        print("ALLOCATION REALM \(String(format:"%p",rlmRealm))")
     }
 }
 
