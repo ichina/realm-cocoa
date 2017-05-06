@@ -117,8 +117,11 @@ public final class Results<T: Object>: NSObject, NSFastEnumeration {
 
     internal init(_ rlmResults: RLMResults<RLMObject>) {
         self.rlmResults = rlmResults
+        print("ALLOCATION RESULTS")
     }
-
+    deinit {
+        print("DEALLOCATION RESULTS")
+    }
     // MARK: Index Retrieval
 
     /**
